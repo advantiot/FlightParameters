@@ -8,7 +8,7 @@ import processing.serial.*;
 /* Flags to include / exclude code snippets */
 
 boolean TEST_MODE = false; //set to true to use test data for animation of gauge needles
-boolean ARDUINO_MODE = false; //set to true to use sensor data from Arduino
+boolean ARDUINO_MODE = true; //set to true to use sensor data from Arduino
 boolean API_MODE = false;  //set to true to use sensor data from API (ThingSpeak)
 
 //Values for screen layout
@@ -87,7 +87,9 @@ void setup()
   
   if(ARDUINO_MODE){
     println(Serial.list()); //Shows your connected serial ports //-- With Arduino
-    port = new Serial(this, Serial.list()[0], 115200);  //-- With Arduino
+    
+    //port = new Serial(this, Serial.list()[0], 115200);  //-- The first [0] port on a Windows PC
+    port = new Serial(this, Serial.list()[1], 115200);  //-- The second [1] port on a Mac
     //Up there you should select port which arduino connected and same baud rate.
     port.bufferUntil('\n'); //-- With Arduino
   }
