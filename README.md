@@ -6,3 +6,4 @@ The project includes Arduino and Processing sketch (code) files in their respect
 - FlightParameters.pde: This is the Processing sketch to display a flight instrument cluster that displays values from the sensors
 - MPU6050_DMP6_SensorInput.ino: This is the Arduino code to read the flight motion sensors.
 - arduino-esp2866-thingspeak.ino: This is a standalone sketch that sends a series of random data values to a Test Channel on ThingSpeak via the ESP2866 Wifi breakout board. This code will need to be adapted and incorporated into other Arduino sketches that need to send data to ThingSpeak. 
+- FlightParameters.fzz: The Fritzing design files for the circuit layout
